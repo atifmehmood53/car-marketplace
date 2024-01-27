@@ -1,0 +1,129 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Camry",
+        "images": ["https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2024/camry/mlp/highlight-gallery/CAH_MY22_0004_V001_jTTcKj04Jowej8vEDrfQ.png?fmt=jpeg&fit=crop&qlt=90&wid=1024"],
+        "mileage": "30,000 miles",
+        "year": 2019,
+        "color": "White",
+        "price": "$20,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A dependable 2019 Toyota Camry with a sleek white exterior. Known for its reliability and fuel efficiency, this car is perfect for both city and highway driving."
+      },
+      {
+        "id": 2,
+        "make": "Ford",
+        "images": ["https://content.fortune.com/wp-content/uploads/2017/01/img_1099.jpg"],
+        "model": "Mustang",
+        "mileage": "45,000 miles",
+        "year": 2018,
+        "color": "Red",
+        "price": "$25,000",
+        "fuelType": "Gasoline",
+        "transmission": "Manual",
+        "description": "A bold 2018 Ford Mustang with a vibrant red finish. This car combines classic muscle power with modern design, making it a thrilling choice for driving enthusiasts."
+      },
+      {
+        "id": 3,
+        "make": "Tesla",
+        "model": "Model 3",
+        "images": ["https://wheelfront.com/wp-content/uploads/formidable/8/tesla-model-3-with-21inch-signature-sv107-wheels-1.jpg"],
+        "mileage": "15,000 miles",
+        "year": 2020,
+        "color": "Black",
+        "price": "$35,000",
+        "fuelType": "Electric",
+        "transmission": "Automatic",
+        "description": "An innovative 2020 Tesla Model 3 in elegant black. With its advanced electric engine and cutting-edge technology, it offers a high-performance, eco-friendly driving experience."
+      },
+      {
+        "id": 4,
+        "make": "Honda",
+        "model": "Civic",
+        "images": ["https://lh3.googleusercontent.com/6IG86tQmCLJ3GZqdcWpj-I2BGtMkVn8peWffRSM_x2VQdODjBGRCQJEMBpOBAd52fvgxO3UH7mJb7K8YZBenJLW6MtaZDhCDdg=s1500"],
+        "mileage": "22,000 miles",
+        "year": 2019,
+        "color": "Blue",
+        "price": "$18,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A reliable 2019 Honda Civic with a dynamic blue exterior. Known for its longevity and great fuel economy, it's an ideal choice for practical and efficient daily commuting."
+      },
+      {
+        "id": 5,
+        "make": "Chevrolet",
+        "model": "Impala",
+        "mileage": "50,000 miles",
+        "year": 2017,
+        "color": "Grey",
+        "price": "$16,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A spacious 2017 Chevrolet Impala in sleek grey. This car offers a comfortable ride, ample cabin space, and a smooth driving experience, perfect for long journeys."
+      },
+      {
+        "id": 6,
+        "make": "BMW",
+        "model": "3 Series",
+        "mileage": "40,000 miles",
+        "year": 2018,
+        "color": "Black",
+        "price": "$28,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A luxurious 2018 BMW 3 Series in sophisticated black. Combining performance with elegance, this car offers a premium driving experience with top-notch interior features."
+      },
+      {
+        "id": 7,
+        "make": "Audi",
+        "model": "A4",
+        "mileage": "35,000 miles",
+        "year": 2020,
+        "color": "White",
+        "price": "$33,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A refined 2020 Audi A4 in classic white. This car stands out with its blend of performance, luxury, and cutting-edge technology, providing a smooth and sophisticated ride."
+      },
+      {
+        "id": 8,
+        "make": "Nissan",
+        "model": "Altima",
+        "mileage": "27,000 miles",
+        "year": 2019,
+        "color": "Silver",
+        "price": "$19,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A versatile 2019 Nissan Altima in shimmering silver. This car is known for its comfortable interior, fuel efficiency, and reliable performance, suitable for both city and long-distance driving."
+      },
+      {
+        "id": 9,
+        "make": "Subaru",
+        "model": "Outback",
+        "mileage": "32,000 miles",
+        "year": 2020,
+        "color": "Green",
+        "price": "$24,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "A rugged 2020 Subaru Outback in forest green. This all-wheel-drive car is perfect for adventure lovers, offering great off-road capabilities and a spacious interior."
+      },
+      {
+        "id": 10,
+        "make": "Mercedes-Benz",
+        "model": "C-Class",
+        "mileage": "28,000 miles",
+        "year": 2019,
+        "color": "Black",
+        "price": "$30,000",
+        "fuelType": "Gasoline",
+        "transmission": "Automatic",
+        "description": "An elegant 2019 Mercedes-Benz C-Class in classic black. With its luxurious interior, smooth ride, and advanced features, it sets the standard for premium midsize cars."
+      }
+    ]
+  }
+  
