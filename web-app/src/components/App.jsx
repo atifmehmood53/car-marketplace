@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         </Container>
       </Box>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
