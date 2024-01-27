@@ -4,23 +4,22 @@ import ListingPage, { loader as ListingLoader } from "./listing";
 import DetailsPage, { loader as DetailsLoader } from "./details";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                index: true,
-                element: <ListingPage />,
-                loader: ListingLoader
-            },
-            {
-                path: "/:listingId",
-                element: <DetailsPage />,
-                loader: DetailsLoader
-            },
-        ],
-    },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <ListingPage />,
+        loader: ListingLoader,
+      },
+      {
+        path: "/:listingId",
+        element: <DetailsPage />,
+        loader: DetailsLoader,
+      },
+    ],
+  },
 ]);
-
 
 export default router;
