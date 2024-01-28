@@ -56,6 +56,7 @@
         "id": 5,
         "make": "Chevrolet",
         "model": "Impala",
+        "images": ["https://cars.usnews.com/static/images/Auto/izmo/Colors/chevrolet_14impala2lt9a_ashengraymetallic.jpg"],
         "mileage": "50,000 miles",
         "year": 2017,
         "color": "Grey",
@@ -68,6 +69,7 @@
         "id": 6,
         "make": "BMW",
         "model": "3 Series",
+        "images": ["https://images.clickdealer.co.uk/vehicles/5508/5508209/large1/128700007.jpg"],
         "mileage": "40,000 miles",
         "year": 2018,
         "color": "Black",
@@ -81,48 +83,13 @@
         "make": "Audi",
         "model": "A4",
         "mileage": "35,000 miles",
+        "images": ["https://i.pinimg.com/originals/43/ad/cc/43adcca59e797f5f5539c869d18f72d4.jpg"],
         "year": 2020,
         "color": "White",
         "price": "$33,000",
         "fuelType": "Gasoline",
         "transmission": "Automatic",
         "description": "A refined 2020 Audi A4 in classic white. This car stands out with its blend of performance, luxury, and cutting-edge technology, providing a smooth and sophisticated ride."
-      },
-      {
-        "id": 8,
-        "make": "Nissan",
-        "model": "Altima",
-        "mileage": "27,000 miles",
-        "year": 2019,
-        "color": "Silver",
-        "price": "$19,000",
-        "fuelType": "Gasoline",
-        "transmission": "Automatic",
-        "description": "A versatile 2019 Nissan Altima in shimmering silver. This car is known for its comfortable interior, fuel efficiency, and reliable performance, suitable for both city and long-distance driving."
-      },
-      {
-        "id": 9,
-        "make": "Subaru",
-        "model": "Outback",
-        "mileage": "32,000 miles",
-        "year": 2020,
-        "color": "Green",
-        "price": "$24,000",
-        "fuelType": "Gasoline",
-        "transmission": "Automatic",
-        "description": "A rugged 2020 Subaru Outback in forest green. This all-wheel-drive car is perfect for adventure lovers, offering great off-road capabilities and a spacious interior."
-      },
-      {
-        "id": 10,
-        "make": "Mercedes-Benz",
-        "model": "C-Class",
-        "mileage": "28,000 miles",
-        "year": 2019,
-        "color": "Black",
-        "price": "$30,000",
-        "fuelType": "Gasoline",
-        "transmission": "Automatic",
-        "description": "An elegant 2019 Mercedes-Benz C-Class in classic black. With its luxurious interior, smooth ride, and advanced features, it sets the standard for premium midsize cars."
       }
     ]
   }

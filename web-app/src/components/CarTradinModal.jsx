@@ -24,7 +24,7 @@ const CarTradingModal = ({ isOpen, onOpen, onClose }) => {
           <ModalHeader>Car Trading Form</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <TradinForm />
+            <TradinForm onSubmitSuccess={onClose} />
           </ModalBody>
         </ModalContent>
       </Modal>

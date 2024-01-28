@@ -17,6 +17,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { AuthContext } from "../../contexts/AuthContext";
 import CarTradingModal from "../../components/CarTradinModal";
 import DetailsLoader from "../../components/DetailsLoader";
+import GenericError from "../../components/GenericError";
 
 export default function DetailsPage() {
   const { isSignedIn, setAuthToken } = useContext(AuthContext);
@@ -27,10 +28,7 @@ export default function DetailsPage() {
     <Box padding="6">
       <Stack direction={{ base: "column", md: "row" }} spacing="24px">
         <React.Suspense fallback={<DetailsLoader />}>
-          <Await
-            resolve={carDetails}
-            errorElement={<div>Could not load detail 😬</div>}
-          >
+          <Await resolve={carDetails} errorElement={<GenericError />}>
             {(carDetails) => {
               return (
                 <>
@@ -71,16 +69,14 @@ export default function DetailsPage() {
                         <>
                           <Stack alignItems="center" flex={1}>
                             <Text size="md" fontWeight="600">
-                              Wanna Trade In?
+                              Wanna Trade-in? Sign in
                             </Text>
                             <GoogleLogin
                               onSuccess={(credentialResponse) => {
                                 setAuthToken(credentialResponse.credential);
                                 onOpen();
                               }}
-                              onError={() => {
-                                console.log("Login Failed");
-                              }}
+                              onError={() => {}}
                             />
                           </Stack>
                         </>

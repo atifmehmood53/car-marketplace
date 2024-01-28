@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   Button,
   FormControl,
@@ -11,10 +11,15 @@ import {
   FormErrorMessage,
   useToast,
 } from "@chakra-ui/react";
+import { AuthContext } from "../contexts/AuthContext";
 
-export default function CarTradingForm() {
+export default function CarTradingForm({ onSubmitSuccess }) {
+  const { user } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     make: "",
+    name: user.name,
+    email: user.email,
+    contact: "",
     model: "",
     year: "",
     mileage: "",
@@ -52,14 +57,16 @@ export default function CarTradingForm() {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
-      console.log("Form Data Submitted:", formData);
       toast({
+        position: "top",
         title: "Form submitted.",
-        description: "We've received your car information.",
+        description:
+          "We've received your car information. We'll get back to you soon.",
         status: "success",
         duration: 5000,
         isClosable: true,
       });
+      onSubmitSuccess();
     } else {
       setFormErrors(errors);
     }
@@ -74,12 +81,50 @@ export default function CarTradingForm() {
     ) {
       errors.year = `Year must be between 1885 and ${currentYear}`;
     }
+
+    if (formData.images.length === 0) {
+      errors.images = "Please upload at least one image of the car.";
+    }
     return errors;
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <Stack spacing={4}>
+        <FormControl isRequired>
+          <FormLabel>Name</FormLabel>
+          <Input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel>Email</FormLabel>
+          <Input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </FormControl>
+
+        <FormControl isRequired isInvalid={formErrors.contact}>
+          <FormLabel>Contact Number</FormLabel>
+          <Input
+            type="tel"
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" // Simple pattern for a phone number like 123-456-7890
+            placeholder="123-456-7890"
+          />
+          {formErrors.contact && (
+            <FormErrorMessage>{formErrors.contact}</FormErrorMessage>
+          )}
+        </FormControl>
+
         <FormControl isRequired>
           <FormLabel>Make</FormLabel>
           <Input
@@ -149,14 +194,18 @@ export default function CarTradingForm() {
           </NumberInput>
         </FormControl>
 
-        <FormControl>
+        <FormControl isRequired isInvalid={formErrors.images}>
           <FormLabel>Images</FormLabel>
           <Input
             type="file"
             name="images"
             multiple
             onChange={handleImageChange}
+            accept="image/*"
           />
+          {formErrors.images && (
+            <FormErrorMessage>{formErrors.images}</FormErrorMessage>
+          )}
         </FormControl>
 
         <Button type="submit" colorScheme="blue">

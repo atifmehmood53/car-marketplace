@@ -3,6 +3,7 @@ import { Await, useLoaderData } from "react-router-dom";
 import { SimpleGrid } from "@chakra-ui/react";
 import ListingLoader from "../../components/ListingLoader";
 import ListingCard from "../../components/ListingCard";
+import GenericError from "../../components/GenericError";
 
 export default function ListingPage() {
   const { listings } = useLoaderData();
@@ -21,10 +22,7 @@ export default function ListingPage() {
           </>
         }
       >
-        <Await
-          resolve={listings}
-          errorElement={<div>Could not load reviews 😬</div>}
-        >
+        <Await resolve={listings} errorElement={<GenericError />}>
           {(data) => {
             return data.map((car) => (
               <ListingCard key={car.id} carDetails={car} />
