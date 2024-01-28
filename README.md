@@ -1,18 +1,17 @@
-# Car Marketplace
+# 🚗 Car Marketplace
 
-Car Marketplace is a web application built with React.js, where users can trade cars. The application uses Google Login for authentication.
+Car Marketplace is a web application built with React.js, where users can trade cars. The application uses Google Login for authentication, ensuring a seamless and secure user experience. 🛡️
 
-## Hosted Webapp 
-[https://seezcar-marketplace.netlify.app/](https://seezcar-marketplace.netlify.app/)
+## 🌐 Hosted Webapp 
+Check out the live version here: [Car Marketplace Live](https://seezcar-marketplace.netlify.app/)
 
-## Prerequisites
+## 📋 Prerequisites
 
 Before you begin, ensure you have met the following requirements:
+- Node.js (preferably the latest stable version) 📦
+- A package manager like npm or yarn 🧶
 
-- Node.js (preferably the latest stable version)
-- A package manager like npm or yarn
-
-## Installation
+## 🛠 Installation
 
 To install Car Marketplace, follow these steps:
 
@@ -22,7 +21,7 @@ To install Car Marketplace, follow these steps:
    cd car-marketplace
    npm install
    # or if you use yarn
-   yarn install```
+   yarn install
 
 <img width="1669" alt="image" src="https://github.com/atifmehmood53/car-marketplace/assets/35393156/1c5d636d-7792-4f4b-aebd-3a6bf2189a84">
 <img width="1670" alt="image" src="https://github.com/atifmehmood53/car-marketplace/assets/35393156/5b2d4fb8-6597-4f72-b00b-5601746aecc2">
