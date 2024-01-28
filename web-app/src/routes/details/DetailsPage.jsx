@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Await, useLoaderData } from "react-router-dom";
 import {
+  Box,
   Flex,
   Heading,
   Text,
@@ -15,6 +16,7 @@ import CarInfo from "../../components/CarInfo";
 import { GoogleLogin } from "@react-oauth/google";
 import { AuthContext } from "../../contexts/AuthContext";
 import CarTradingModal from "../../components/CarTradinModal";
+import DetailsLoader from "../../components/DetailsLoader";
 
 export default function DetailsPage() {
   const { isSignedIn, setAuthToken } = useContext(AuthContext);
@@ -22,69 +24,75 @@ export default function DetailsPage() {
   const { carDetails } = useLoaderData();
 
   return (
-    <React.Suspense fallback={"loading...."}>
-      <Await
-        resolve={carDetails}
-        errorElement={<div>Could not load detail 😬</div>}
-      >
-        {(carDetails) => {
-          return (
-            <Flex gap="8" flexWrap="wrap">
-              <Card flex={2}>
-                <Image
-                  src={carDetails?.images?.length ? carDetails.images[0] : ""}
-                  alt={`${carDetails.make}: ${carDetails.model}`}
-                  borderRadius="lg"
-                  width={"100%"}
-                  height={"100%"}
-                  objectFit="cover"
-                />
-              </Card>
-              <Card flex={1}>
-                <CardBody>
-                  <Flex direction="column" gap={2}>
-                    <Heading size="2xl">
-                      {carDetails.make}: {carDetails.model}
-                    </Heading>
-                    <Text size="lg">{carDetails.description}</Text>
-                    <Text color="blue.600" fontSize="lg">
-                      {carDetails.price}
-                    </Text>
-                    <CarInfo carDetails={carDetails} />
-                  </Flex>
-                </CardBody>
-                <CardFooter>
-                  {isSignedIn && (
-                    <CarTradingModal
-                      isOpen={isOpen}
-                      onOpen={onOpen}
-                      onClose={onClose}
+    <Box padding="6">
+      <Stack direction={{ base: "column", md: "row" }} spacing="24px">
+        <React.Suspense fallback={<DetailsLoader />}>
+          <Await
+            resolve={carDetails}
+            errorElement={<div>Could not load detail 😬</div>}
+          >
+            {(carDetails) => {
+              return (
+                <>
+                  <Card flex={2}>
+                    <Image
+                      src={
+                        carDetails?.images?.length ? carDetails.images[0] : ""
+                      }
+                      alt={`${carDetails.make}: ${carDetails.model}`}
+                      borderRadius="lg"
+                      width={"100%"}
+                      height={"100%"}
+                      objectFit="cover"
                     />
-                  )}
-                  {!isSignedIn && (
-                    <>
-                      <Stack alignItems="center" flex={1}>
-                        <Text size="md" fontWeight="600">
-                          Wanna Trade In?
+                  </Card>
+                  <Card flex={1}>
+                    <CardBody>
+                      <Flex direction="column" gap={2}>
+                        <Heading size="2xl">
+                          {carDetails.make}: {carDetails.model}
+                        </Heading>
+                        <Text size="lg">{carDetails.description}</Text>
+                        <Text color="blue.600" fontSize="lg">
+                          {carDetails.price}
                         </Text>
-                        <GoogleLogin
-                          onSuccess={(credentialResponse) => {
-                            setAuthToken(credentialResponse.credential);
-                            onOpen();
-                          }}
-                          onError={() => {
-                            console.log("Login Failed");
-                          }}
+                        <CarInfo carDetails={carDetails} />
+                      </Flex>
+                    </CardBody>
+                    <CardFooter>
+                      {isSignedIn && (
+                        <CarTradingModal
+                          isOpen={isOpen}
+                          onOpen={onOpen}
+                          onClose={onClose}
                         />
-                      </Stack>
-                    </>
-                  )}
-                </CardFooter>
-              </Card>
-            </Flex>
-          );
-        }}
-      </Await>
-    </React.Suspense>
+                      )}
+                      {!isSignedIn && (
+                        <>
+                          <Stack alignItems="center" flex={1}>
+                            <Text size="md" fontWeight="600">
+                              Wanna Trade In?
+                            </Text>
+                            <GoogleLogin
+                              onSuccess={(credentialResponse) => {
+                                setAuthToken(credentialResponse.credential);
+                                onOpen();
+                              }}
+                              onError={() => {
+                                console.log("Login Failed");
+                              }}
+                            />
+                          </Stack>
+                        </>
+                      )}
+                    </CardFooter>
+                  </Card>
+                </>
+              );
+            }}
+          </Await>
+        </React.Suspense>
+      </Stack>
+    </Box>
   );
 }
