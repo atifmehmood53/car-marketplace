@@ -1,13 +1,13 @@
+const delayTimeout = 1000;
 export async function fetchListing() {
   return new Promise(function (resolve, reject) {
     setTimeout(async () => {
       resolve((await import("./listing.json")).default.cars);
-    }, 5000);
+    }, delayTimeout);
   });
 }
 
 export async function getListingDetails(listingId) {
-  console.log(listingId);
   return new Promise(function (resolve, reject) {
     setTimeout(async () => {
       const cars = (await import("./listing.json")).default.cars;
@@ -17,6 +17,6 @@ export async function getListingDetails(listingId) {
       } else {
         reject();
       }
-    }, 5000);
+    }, delayTimeout);
   });
 }

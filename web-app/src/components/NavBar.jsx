@@ -12,9 +12,10 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 
 function NavBar() {
-  const { user, isSignedIn, logout } = useContext(AuthContext);
+  const { user, isSignedIn, logout, setAuthToken } = useContext(AuthContext);
 
   return (
     <Flex
@@ -42,6 +43,21 @@ function NavBar() {
             <MenuList>
               <MenuItem onClick={logout}>
                 <Text color="black">Logout</Text>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        )}
+        {!isSignedIn && (
+          <Menu>
+            <MenuButton>Login</MenuButton>
+            <MenuList>
+              <MenuItem>
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    setAuthToken(credentialResponse.credential);
+                  }}
+                  onError={() => {}}
+                />
               </MenuItem>
             </MenuList>
           </Menu>

@@ -5,6 +5,7 @@ import { jwtDecode } from "jwt-decode";
 import { useCookies } from "react-cookie";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
@@ -40,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="469505459561-0f3rdm972kd8pvpdvrprp0selsusgmjp.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={googleClientId}>
       <AuthContext.Provider value={contextValue}>
         {children}
       </AuthContext.Provider>
