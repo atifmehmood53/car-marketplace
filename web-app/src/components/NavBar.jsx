@@ -1,6 +1,21 @@
-import { Box, Flex, Text, Link, Spacer } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Avatar,
+  Spacer,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 function NavBar() {
+  const { user, isSignedIn, logout } = useContext(AuthContext);
+
   return (
     <Flex
       position="fixed"
@@ -14,14 +29,23 @@ function NavBar() {
     >
       <Box p="2">
         <Text fontSize="xl" fontWeight="bold">
-          App Banner
+          <Link to="/">Car Marketplace</Link>
         </Text>
       </Box>
       <Spacer />
       <Box>
-        <Link px={2} href="#">
-          Home
-        </Link>
+        {isSignedIn && (
+          <Menu>
+            <MenuButton>
+              <Avatar name={user.name} src={user.picture} />
+            </MenuButton>
+            <MenuList>
+              <MenuItem onClick={logout}>
+                <Text color="black">Logout</Text>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        )}
       </Box>
     </Flex>
   );
