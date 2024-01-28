@@ -22,6 +22,11 @@ To install Car Marketplace, follow these steps:
    npm install
    # or if you use yarn
    yarn install
+   npm run dev
+   # or if you use yarn
+   yarn run dev
+   
+   
 
 <img width="1669" alt="image" src="https://github.com/atifmehmood53/car-marketplace/assets/35393156/1c5d636d-7792-4f4b-aebd-3a6bf2189a84">
 <img width="1670" alt="image" src="https://github.com/atifmehmood53/car-marketplace/assets/35393156/5b2d4fb8-6597-4f72-b00b-5601746aecc2">
