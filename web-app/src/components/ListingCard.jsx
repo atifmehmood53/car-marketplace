@@ -12,6 +12,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import CarInfo from "./CarInfo";
+import { Link } from "react-router-dom";
 
 export default function ListingCard({ carDetails }) {
   return (
@@ -33,7 +34,7 @@ export default function ListingCard({ carDetails }) {
           />
           <Stack mt="6" spacing="3">
             <Heading size="md">
-              <LinkOverlay href={`/${carDetails.id}`}>
+              <LinkOverlay as={Link} to={carDetails.id.toString()} href="#">
                 {carDetails.make}: {carDetails.model}
               </LinkOverlay>
             </Heading>
