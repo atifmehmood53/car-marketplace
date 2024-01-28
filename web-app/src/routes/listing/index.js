@@ -1,6 +1,6 @@
 import { defer } from "react-router-dom";
 import ListingPage from "./ListingPage";
-import { fetchListing } from "../../models";
+import { fetchListing } from "../../model";
 
 export async function loader({ params }) {
   const listingPromise = fetchListing();

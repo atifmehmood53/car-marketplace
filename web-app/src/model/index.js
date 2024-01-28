@@ -7,6 +7,7 @@ export async function fetchListing() {
 }
 
 export async function getListingDetails(listingId) {
+  console.log(listingId);
   return new Promise(function (resolve, reject) {
     setTimeout(async () => {
       const cars = (await import("./listing.json")).default.cars;
