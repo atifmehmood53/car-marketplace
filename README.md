@@ -1,6 +1,6 @@
 # Car Marketplace
 
-Car Marketplace is a web application built with React.js, where users can trade cars. The application uses Google Login for authentication, and currently, only `atifmehmood@gmail.com` password:`Nt!5xLLEEhitokpR` is allowed to sign in.
+Car Marketplace is a web application built with React.js, where users can trade cars. The application uses Google Login for authentication.
 
 ## Prerequisites
 
