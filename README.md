@@ -1,6 +1,6 @@
 # 🚗 Car Marketplace
 
-Car Marketplace is a web application built with React.js, where users can trade cars. The application uses Google Login for authentication, ensuring a seamless and secure user experience. 🛡️
+Car Marketplace is a web application built with React.js, where users can view listing and trade cars. The application uses Google Login for authentication, ensuring a seamless and secure user experience. 🛡️
 
 ## 🌐 Hosted Webapp 
 Check out the live version here: [Car Marketplace Live](https://seezcar-marketplace.netlify.app/)
